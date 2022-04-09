@@ -8,6 +8,11 @@ function Cart({ cart, updateCart }) {
 		0
 	)
 
+	function supprimerArticle(name){
+        const  newCart = cart.filter((plant) => plant.name !==name)
+		updateCart([...newCart])
+	}
+
   useEffect( () => {
     document.title = `LMJ :${total}$ d'achats` 
   }, [total])
@@ -24,8 +29,11 @@ function Cart({ cart, updateCart }) {
 					<h2>Panier</h2>
 					<ul>
 						{cart.map(({ name, price, amount }, index) => (
-							<div key={`${name}-${index}`}>
+							<div className='article' key={`${name}-${index}`}>
 								{name} {price}€ x {amount}
+								<button className='lmj-delete-article'
+								 onClick={() => supprimerArticle(name)}
+								> Supprimer</button>
 							</div>
 						))}
 					</ul>

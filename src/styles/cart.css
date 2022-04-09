@@ -33,3 +33,22 @@
 .lmj-cart-closed > button {
 	color: black;
 }
+
+.lmj-delete-article{
+	width: 100px;
+	height: 30px;
+	font-size: 0.7em;
+	border-radius: 10px;
+	outline: none;
+	border: none;
+	margin-left: 30px;
+}
+
+.article{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	margin-top: 15px;
+}
